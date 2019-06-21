@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fiche">
+    <ImageView
+        app:layout_constraintTop_toTopOf="@+id/fiche"
+        app:layout_constraintLeft_toLeftOf="@+id/fiche"
+        app:layout_constraintRight_toRightOf="@+id/fiche"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="290sp"
+        android:id="@+id/item_picture"/>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/product_infos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/item_picture"
+        app:layout_constraintLeft_toLeftOf="@+id/fiche"
+        app:layout_constraintRight_toRightOf="@+id/fiche"
+        app:layout_constraintBottom_toBottomOf="@+id/fiche">
+        <TextView
+            android:id="@+id/product_title"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/product_infos"
+            app:layout_constraintLeft_toLeftOf="@id/product_infos"
+            android:text="Petits pois et carottes"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/product_brand"
+            app:layout_constraintLeft_toLeftOf="@id/product_infos"
+            app:layout_constraintTop_toBottomOf="@id/product_title"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textColor="@color/black"
+            android:text="Cassegrain"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/label_barcode"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/product_brand"
+            app:layout_constraintLeft_toLeftOf="@id/product_infos"
+            android:layout_marginTop="20dp"
+            android:text="Code barre:"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/value_barcode"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/label_barcode"
+            app:layout_constraintBottom_toBottomOf="@+id/label_barcode"
+            app:layout_constraintLeft_toRightOf="@id/label_barcode"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"
+            android:text="5030530491321305"
+             />
+
+        <TextView
+            android:id="@+id/label_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/label_barcode"
+            app:layout_constraintLeft_toLeftOf="@id/product_infos"
+            android:text="Quantité:"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/value_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/label_quantity"
+            app:layout_constraintBottom_toBottomOf="@+id/label_quantity"
+            app:layout_constraintLeft_toRightOf="@id/label_quantity"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"
+            android:text="400g (280g net égoutté)"
+            />
+
+        <TextView
+            android:id="@+id/label_sold_in"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/label_quantity"
+            app:layout_constraintLeft_toLeftOf="@id/product_infos"
+            android:text="Vendu en:"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/value_sold_in"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/label_sold_in"
+            app:layout_constraintBottom_toBottomOf="@+id/label_sold_in"
+            app:layout_constraintLeft_toRightOf="@id/label_sold_in"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="5dp"
+            android:text="France, Japon, Suisse"
+            />
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>
