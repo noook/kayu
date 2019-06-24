@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="illustration_height">290sp</dimen>
+    <dimen name="nutri_score_width">78sp</dimen>
+    <dimen name="nutri_score_height">42sp</dimen>
+    <dimen name="title_size">18sp</dimen>
+    <dimen name="brand_size">15sp</dimen>
+    <dimen name="text_size">15sp</dimen>
+</resources>

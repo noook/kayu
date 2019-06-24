@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Mon comparateur</string>
+    <string name="peas_and_carrots">Petits pois et carottes</string>
+    <string name="brand_placeholder">Cassegrain</string>
+    <string name="barcode">Code barre</string>
+    <string name="quantity">Quantité</string>
+    <string name="additives">Additifs</string>
+    <string name="sold_in">Vendu en</string>
+    <string name="ingredients">Ingrédients</string>
+    <string name="allergenes">Substances allergènes</string>
 </resources>
