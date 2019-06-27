@@ -6,4 +6,17 @@
     <dimen name="title_size">18sp</dimen>
     <dimen name="brand_size">15sp</dimen>
     <dimen name="text_size">15sp</dimen>
+    <dimen name="side_margin">16dp</dimen>
+    <dimen name="list_product_image">248sp</dimen>
+    <dimen name="list_title_margin">20sp</dimen>
+    <dimen name="bookmark_width">18dp</dimen>
+    <dimen name="bookmark_height">32dp</dimen>
+    <dimen name="nutriscore_icon_width">25dp</dimen>
+    <dimen name="nutriscore_icon_height">16dp</dimen>
+    <dimen name="footer_font_size">14sp</dimen>
+    <dimen name="calories_icon_height">16dp</dimen>
+    <dimen name="calories_icon_width">16dp</dimen>
+    <dimen name="no_scan_yet_size">16sp</dimen>
+    <dimen name="empty_plate_width">120dp</dimen>
+    <dimen name="empty_plate_height">120dp</dimen>
 </resources>

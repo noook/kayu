@@ -8,4 +8,9 @@
     <string name="sold_in">Vendu en</string>
     <string name="ingredients">Ingrédients</string>
     <string name="allergenes">Substances allergènes</string>
+    <string name="nothing_scanned_yet">Vous n\'avez encore rien scanné !</string>
+    <string name="click_to_begin">Cliquez sur le bouton ci-dessous pour commencer</string>
+    <string name="scan_a_product">Scanner un produit</string>
+    <string name="nutriscore_value">Nutriscore: %1$s</string>
+    <string name="calories_per_portion">%1$d kCal/part</string>
 </resources>

@@ -46,10 +46,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.list)
         supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.title_gradiant))
 
-        list.layoutManager = LinearLayoutManager(this)
         val products = listOf<Product>(
             Product(
                 "Petits pois et carottes",
@@ -61,7 +59,13 @@ class MainActivity : AppCompatActivity() {
                 listOf("France", "Japon", "Suisse"),
                 listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
                 listOf(),
-                listOf()
+                listOf(),
+                NutritionFactsItem(
+                    "kCal",
+                    (1..600).shuffled().first(),
+                    (1..600).shuffled().first()
+                ),
+                Math.random() < 0.5
             ),
             Product(
                 "Petits pois et carottes",
@@ -73,7 +77,13 @@ class MainActivity : AppCompatActivity() {
                 listOf("France", "Japon", "Suisse"),
                 listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
                 listOf(),
-                listOf()
+                listOf(),
+                NutritionFactsItem(
+                    "kCal",
+                    (1..600).shuffled().first(),
+                    (1..600).shuffled().first()
+                ),
+                Math.random() < 0.5
             ),
             Product(
                 "Petits pois et carottes",
@@ -85,7 +95,13 @@ class MainActivity : AppCompatActivity() {
                 listOf("France", "Japon", "Suisse"),
                 listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
                 listOf(),
-                listOf()
+                listOf(),
+                NutritionFactsItem(
+                    "kCal",
+                    (1..600).shuffled().first(),
+                    (1..600).shuffled().first()
+                ),
+                Math.random() < 0.5
             ),
             Product(
                 "Petits pois et carottes",
@@ -97,11 +113,23 @@ class MainActivity : AppCompatActivity() {
                 listOf("France", "Japon", "Suisse"),
                 listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
                 listOf(),
-                listOf()
+                listOf(),
+                NutritionFactsItem(
+                    "kCal",
+                    (1..600).shuffled().first(),
+                    (1..600).shuffled().first()
+                ),
+                Math.random() < 0.5
             )
         )
 
-        list.adapter = ProductAdapter(products)
+        if (products.isNotEmpty()) {
+            setContentView(R.layout.list)
+            list.layoutManager = LinearLayoutManager(this)
+            list.adapter = ProductAdapter(products)
+        } else {
+            setContentView(R.layout.empty_list)
+        }
     }
 
     fun updateValues(product: Product) {

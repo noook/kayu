@@ -12,4 +12,6 @@
     <color name="nutrient_level_low">#85BB2F</color>
     <color name="nutrient_level_moderate">#FDCB01</color>
     <color name="nutrient_level_high">#E63E12</color>
+    <color name="bookmarked">#0EAD69</color>
+    <color name="white">#fff</color>
 </resources>
