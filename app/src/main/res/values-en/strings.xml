@@ -13,4 +13,5 @@
     <string name="scan_a_product">Scan a product</string>
     <string name="nutriscore_value">Nutriscore: %1$s</string>
     <string name="calories_per_portion">%1$d kCal/part</string>
+    <string name="nutrition_100_benchmarks">Nutritional benchmarks for 100g</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.kayu
 
+import android.content.Intent
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +14,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.empty_list.*
 import kotlinx.android.synthetic.main.list.*
 
 class MainActivity : AppCompatActivity() {
@@ -49,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.title_gradiant))
 
         val products = listOf<Product>(
-            Product(
+            /*Product(
                 "Petits pois et carottes",
                 "Cassegrain",
                 "3083680085304",
@@ -120,7 +122,7 @@ class MainActivity : AppCompatActivity() {
                     (1..600).shuffled().first()
                 ),
                 Math.random() < 0.5
-            )
+            )*/
         )
 
         if (products.isNotEmpty()) {
@@ -129,6 +131,11 @@ class MainActivity : AppCompatActivity() {
             list.adapter = ProductAdapter(products)
         } else {
             setContentView(R.layout.empty_list)
+            scan_button.setOnClickListener {
+                intent = Intent(this, DetailActivity::class.java)
+                intent.putExtra("name", "toto")
+                startActivity(intent)
+            }
         }
     }
 

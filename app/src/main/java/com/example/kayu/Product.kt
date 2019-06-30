@@ -13,10 +13,22 @@ data class Product(
     val additives: List<String>,
     val nutriFacts: NutritionFactsItem,
     val bookmarked: Boolean
-) {}
+)
 
 data class NutritionFactsItem(
     val unit: String,
     val quantity_per_portion: Int,
     val quantityFor100: Int
-) {}
+)
+
+data class NutritionFacts(
+    val calories: NutritionFactsItem,
+    val fat: NutritionFactsItem,
+    val fat_acids: NutritionFactsItem,
+    val glucids: NutritionFactsItem,
+    val sugar: NutritionFactsItem,
+    val fibers: NutritionFactsItem,
+    var proteins: NutritionFactsItem,
+    val salt: NutritionFactsItem,
+    val sodium: NutritionFactsItem
+)

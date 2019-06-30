@@ -1,5 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nutrition_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/margin_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="15dp"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/margin_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="15dp"/>
+
+    <TextView
+        android:id="@+id/view_title"
+        android:textSize="15sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/nutrition_100_benchmarks"
+        app:layout_constraintStart_toStartOf="@id/margin_start"
+        app:layout_constraintEnd_toEndOf="@id/margin_end"
+        app:layout_constraintTop_toTopOf="@id/nutrition_layout"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/fat_indicator"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/nutri_indicator"
+        android:backgroundTint="@color/nutrient_level_high"
+        app:layout_constraintBottom_toBottomOf="@+id/fat_quantity"
+        app:layout_constraintStart_toStartOf="@id/margin_start"
+        app:layout_constraintTop_toTopOf="@+id/fat" />
+
+    <TextView
+        android:id="@+id/fat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/view_title"
+        app:layout_constraintStart_toEndOf="@id/fat_indicator"
+        tools:text="0,8g de Matuères grasses / Lipides" />
+    <TextView
+        android:id="@+id/fat_quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        tools:text="En faible quantité"
+        app:layout_constraintStart_toEndOf="@id/fat_indicator"
+        app:layout_constraintTop_toBottomOf="@id/fat"
+        android:layout_marginStart="10dp" />
+
+    <View
+        android:id="@+id/fat_acids_indicator"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/nutri_indicator"
+        android:backgroundTint="@color/nutrient_level_high"
+        app:layout_constraintBottom_toBottomOf="@+id/fat_acids_quantity"
+        app:layout_constraintStart_toStartOf="@id/margin_start"
+        app:layout_constraintTop_toTopOf="@+id/fat_acids" />
+    <TextView
+        android:id="@+id/fat_acids"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/fat_quantity"
+        app:layout_constraintStart_toEndOf="@id/fat_acids_indicator"
+        tools:text="0,1g d'acides gras saturés"
+        android:layout_marginStart="10dp" />
+    <TextView
+        android:id="@+id/fat_acids_quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toEndOf="@id/fat_acids_indicator"
+        app:layout_constraintTop_toBottomOf="@id/fat_acids"
+        tools:text="En faible quantité"
+        android:layout_marginStart="10dp" />
+
+    <View
+        android:id="@+id/sugar_indicator"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/nutri_indicator"
+        android:backgroundTint="@color/nutrient_level_high"
+        app:layout_constraintBottom_toBottomOf="@+id/sugar_quantity"
+        app:layout_constraintStart_toStartOf="@id/margin_start"
+        app:layout_constraintTop_toTopOf="@+id/sugar" />
+
+    <TextView
+        android:id="@+id/sugar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@id/sugar_indicator"
+        app:layout_constraintTop_toBottomOf="@+id/fat_acids_quantity"
+        tools:text="5,2g de sucre"
+        android:layout_marginStart="10dp" />
+
+    <TextView
+        android:id="@+id/sugar_quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@id/sugar_indicator"
+        app:layout_constraintTop_toBottomOf="@+id/sugar"
+        tools:text="En quantité modérée"
+        android:layout_marginStart="10dp" />
+
+    <View
+        android:id="@+id/salt_indicator"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/nutri_indicator"
+        android:backgroundTint="@color/nutrient_level_high"
+        app:layout_constraintBottom_toBottomOf="@+id/salt_quantity"
+        app:layout_constraintStart_toStartOf="@id/margin_start"
+        app:layout_constraintTop_toTopOf="@+id/salt" />
+    <TextView
+        android:id="@+id/salt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@id/salt_indicator"
+        app:layout_constraintTop_toBottomOf="@id/sugar_quantity"
+        android:layout_marginTop="10dp"
+        tools:text="0,75g de sel"
+        android:layout_marginStart="10dp" />
+    <TextView
+        android:id="@+id/salt_quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/salt"
+        app:layout_constraintStart_toEndOf="@id/salt_indicator"
+        tools:text="En quantité modérée"
+        android:layout_marginStart="10dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
