@@ -14,4 +14,16 @@
     <string name="nutriscore_value">Nutriscore: %1$s</string>
     <string name="calories_per_portion">%1$d kCal/part</string>
     <string name="nutrition_100_benchmarks">Nutritional benchmarks for 100g</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_barcode">My products</string>
+    <string name="no_additives">None</string>
+    <string name="no_allergenes">None</string>
+    <string name="sold_nowhere">Sold nowhere</string>
+    <string name="of_fat">%1$s%2$s of fat / lipids</string>
+    <string name="of_fat_acids">%1$s%2$s of fat acids</string>
+    <string name="of_salt">%1$s%2$s of salt</string>
+    <string name="of_sugar">%1$s%2$s of sugar</string>
+    <string name="high_quantity">In high quantity</string>
+    <string name="low_quantity">In low quantity</string>
+    <string name="medium_quantity">In moderate quantity</string>
 </resources>

@@ -8,10 +8,10 @@ import androidx.core.content.ContextCompat
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.StyleSpan
-import android.util.Log
+import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.empty_list.*
@@ -19,9 +19,22 @@ import kotlinx.android.synthetic.main.list.*
 
 class MainActivity : AppCompatActivity() {
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main_activity, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == R.id.barcode) {
+            return true
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
     /*override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fiche)
+        setContentView(R.layout.fragment_product_detail)
         supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.title_gradiant))
         Toast.makeText(applicationContext, "Hello world :)", Toast.LENGTH_SHORT).show()
         Log.v("MainActivity", "Hello world")
@@ -51,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.title_gradiant))
 
         val products = listOf<Product>(
-            /*Product(
+            Product(
                 "Petits pois et carottes",
                 "Cassegrain",
                 "3083680085304",
@@ -59,13 +72,62 @@ class MainActivity : AppCompatActivity() {
                 "https://static.openfoodfacts.org/images/products/308/368/008/5304/front_fr.7.400.jpg",
                 "400 g (280 g net égoutté)",
                 listOf("France", "Japon", "Suisse"),
-                listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
+                listOf(
+                    "Petits pois 66%",
+                    "eau",
+                    "garniture 2,8% (salade, oignon grelot)",
+                    "sucre",
+                    "sel",
+                    "arôme naturel"
+                ),
                 listOf(),
                 listOf(),
-                NutritionFactsItem(
-                    "kCal",
-                    (1..600).shuffled().first(),
-                    (1..600).shuffled().first()
+                NutritionFacts(
+                    NutritionFactsItem(
+                        "kCal",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    )
                 ),
                 Math.random() < 0.5
             ),
@@ -77,13 +139,62 @@ class MainActivity : AppCompatActivity() {
                 "https://static.openfoodfacts.org/images/products/308/368/008/5304/front_fr.7.400.jpg",
                 "400 g (280 g net égoutté)",
                 listOf("France", "Japon", "Suisse"),
-                listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
+                listOf(
+                    "Petits pois 66%",
+                    "eau",
+                    "garniture 2,8% (salade, oignon grelot)",
+                    "sucre",
+                    "sel",
+                    "arôme naturel"
+                ),
                 listOf(),
                 listOf(),
-                NutritionFactsItem(
-                    "kCal",
-                    (1..600).shuffled().first(),
-                    (1..600).shuffled().first()
+                NutritionFacts(
+                    NutritionFactsItem(
+                        "kCal",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    )
                 ),
                 Math.random() < 0.5
             ),
@@ -95,13 +206,62 @@ class MainActivity : AppCompatActivity() {
                 "https://static.openfoodfacts.org/images/products/308/368/008/5304/front_fr.7.400.jpg",
                 "400 g (280 g net égoutté)",
                 listOf("France", "Japon", "Suisse"),
-                listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
+                listOf(
+                    "Petits pois 66%",
+                    "eau",
+                    "garniture 2,8% (salade, oignon grelot)",
+                    "sucre",
+                    "sel",
+                    "arôme naturel"
+                ),
                 listOf(),
                 listOf(),
-                NutritionFactsItem(
-                    "kCal",
-                    (1..600).shuffled().first(),
-                    (1..600).shuffled().first()
+                NutritionFacts(
+                    NutritionFactsItem(
+                        "kCal",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    )
                 ),
                 Math.random() < 0.5
             ),
@@ -113,16 +273,65 @@ class MainActivity : AppCompatActivity() {
                 "https://static.openfoodfacts.org/images/products/308/368/008/5304/front_fr.7.400.jpg",
                 "400 g (280 g net égoutté)",
                 listOf("France", "Japon", "Suisse"),
-                listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
+                listOf(
+                    "Petits pois 66%",
+                    "eau",
+                    "garniture 2,8% (salade, oignon grelot)",
+                    "sucre",
+                    "sel",
+                    "arôme naturel"
+                ),
                 listOf(),
                 listOf(),
-                NutritionFactsItem(
-                    "kCal",
-                    (1..600).shuffled().first(),
-                    (1..600).shuffled().first()
+                NutritionFacts(
+                    NutritionFactsItem(
+                        "kCal",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    ),
+                    NutritionFactsItem(
+                        "g",
+                        (1..600).shuffled().first().toFloat(),
+                        (1..600).shuffled().first().toFloat()
+                    )
                 ),
                 Math.random() < 0.5
-            )*/
+            )
         )
 
         if (products.isNotEmpty()) {
@@ -176,5 +385,11 @@ class MainActivity : AppCompatActivity() {
 fun TextView.setTitleValue(title: String, value: String) {
     text = SpannableString("$title: $value").apply {
         setSpan(StyleSpan(Typeface.BOLD), 0, title.length + 1, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
+    }
+}
+
+class DemoFragment : Fragment() {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.list, container, false)
     }
 }
