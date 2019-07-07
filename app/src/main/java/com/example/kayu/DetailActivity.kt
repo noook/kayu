@@ -6,8 +6,6 @@ import android.view.MenuItem
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_detail.*
-import java.net.URL
-import com.google.gson.Gson
 import kotlinx.coroutines.*
 import java.lang.Exception
 
@@ -19,7 +17,10 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setSupportActionBar(toolbar)
         setContentView(R.layout.activity_detail)
-        val barcode = intent.extras.getString("barcode")
+
+        var barcode = intent.getStringExtra("barcode")
+        println("HERE $barcode") // null ???
+        barcode = "3083680085304" // Using this one for the moment
         val api: API = API.create()
         val tabs = findViewById<TabLayout>(R.id.tabs)
         val viewPager = findViewById<ViewPager>(R.id.viewpager)
@@ -27,7 +28,7 @@ class DetailActivity : AppCompatActivity() {
         GlobalScope.launch(Dispatchers.Main) {
             try {
                 val product = withContext(Dispatchers.IO) {
-                    api.getProduct("3083680085304").await().response?.toProduct()!!
+                    api.getProduct(barcode).await().response?.toProduct()!!
                 }
                 viewPager.adapter = ProductDetailsAdapter(supportFragmentManager, product)
                 tabs.setupWithViewPager(viewPager)
@@ -46,10 +47,3 @@ class DetailActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 }
-
-
-fun getProductFromBarcode(barcode: String): Product {
-    val url = URL("https://api.formation-android.fr/getProduct?barcode=$barcode")
-    return Gson().fromJson(url.readText(), Product::class.java)
-}
-

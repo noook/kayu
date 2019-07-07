@@ -56,7 +56,7 @@ class ProductItemCell(v: View) : RecyclerView.ViewHolder(v) {
         itemView.setOnClickListener {
             val context = itemView.context
             val intent = Intent(context, DetailActivity::class.java)
-            println(product.barcode)
+            println(product.barcode) // Not null
             intent.putExtra("product", product.barcode)
 
             context.startActivity(intent)
