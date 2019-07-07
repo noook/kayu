@@ -18,7 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailActivity" android:theme="@style/DetailsTheme" />
+        <activity
+            android:name=".DetailActivity"
+            android:theme="@style/DetailsTheme" />
     </application>
 
 </manifest>

@@ -1,21 +1,15 @@
 package com.example.kayu
 
 import android.content.Intent
-import android.content.res.ColorStateList
-import android.content.res.Resources
-import android.graphics.drawable.Drawable
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.DrawableCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.list_item_cell.view.*
-import java.security.AccessController.getContext
 import kotlin.math.roundToLong
 
 class ProductAdapter(val products: List<Product>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -47,10 +41,16 @@ class ProductItemCell(v: View) : RecyclerView.ViewHolder(v) {
         name.text = product.name
         brand.text = product.brand
         nutriscore.text = nutriscore.context.getString(R.string.nutriscore_value, product.nutriscore)
-        calories.text = calories.context.getString(R.string.calories_per_portion, product.nutriFacts.calories.quantity_per_portion.roundToLong())
+        calories.text = calories.context.getString(
+            R.string.calories_per_portion,
+            product.nutriFacts.calories.quantity_per_portion.roundToLong()
+        )
         Picasso.get().load(product.picUrl).into(picture)
         if (product.bookmarked) {
-            bookmark.setColorFilter(ContextCompat.getColor(bookmark.context, R.color.bookmarked), android.graphics.PorterDuff.Mode.SRC_IN);
+            bookmark.setColorFilter(
+                ContextCompat.getColor(bookmark.context, R.color.bookmarked),
+                android.graphics.PorterDuff.Mode.SRC_IN
+            )
         }
 
         itemView.setOnClickListener {

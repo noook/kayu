@@ -48,20 +48,20 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/list_title_margin"
-            tools:text="Product Name"
             android:textSize="@dimen/title_size"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/margin_start"
-            app:layout_constraintTop_toBottomOf="@+id/product_image" />
+            app:layout_constraintTop_toBottomOf="@+id/product_image"
+            tools:text="Product Name" />
 
         <TextView
             android:id="@+id/product_brand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Cassegrain"
             android:textSize="@dimen/brand_size"
             app:layout_constraintStart_toStartOf="@id/margin_start"
-            app:layout_constraintTop_toBottomOf="@id/product_name" />
+            app:layout_constraintTop_toBottomOf="@id/product_name"
+            tools:text="Cassegrain" />
 
         <ImageView
             android:id="@+id/bookmark"
@@ -88,11 +88,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            tools:text="Nutriscore: A"
             android:textSize="@dimen/footer_font_size"
             app:layout_constraintBottom_toBottomOf="@id/icon_nutriscore"
             app:layout_constraintStart_toEndOf="@+id/icon_nutriscore"
-            app:layout_constraintTop_toTopOf="@id/icon_nutriscore" />
+            app:layout_constraintTop_toTopOf="@id/icon_nutriscore"
+            tools:text="Nutriscore: A" />
 
         <ImageView
             android:id="@+id/icon_calories"
@@ -110,11 +110,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            tools:text="234 kCal/part"
             android:textSize="@dimen/footer_font_size"
             app:layout_constraintBottom_toBottomOf="@id/icon_nutriscore"
             app:layout_constraintStart_toEndOf="@+id/icon_calories"
-            app:layout_constraintTop_toTopOf="@id/icon_nutriscore" />
+            app:layout_constraintTop_toTopOf="@id/icon_nutriscore"
+            tools:text="234 kCal/part" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

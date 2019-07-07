@@ -9,10 +9,6 @@ import kotlinx.android.synthetic.main.activity_detail.*
 import java.net.URL
 import com.google.gson.Gson
 import kotlinx.coroutines.*
-import okhttp3.Dispatcher
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.lang.Exception
 
 

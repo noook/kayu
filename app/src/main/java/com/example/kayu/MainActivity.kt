@@ -2,15 +2,15 @@ package com.example.kayu
 
 import android.content.Intent
 import android.graphics.Typeface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.content.ContextCompat
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.StyleSpan
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.squareup.picasso.Picasso
@@ -31,33 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         return super.onOptionsItemSelected(item)
     }
-
-    /*override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_product_detail)
-        supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.title_gradiant))
-        Toast.makeText(applicationContext, "Hello world :)", Toast.LENGTH_SHORT).show()
-        Log.v("MainActivity", "Hello world")
-
-        var product = Product(
-            "Petits pois et carottes",
-            "Cassegrain",
-            "3083680085304",
-            "E",
-            "https://static.openfoodfacts.org/images/products/308/368/008/5304/front_fr.7.400.jpg",
-            "400 g (280 g net égoutté)",
-            listOf("France", "Japon", "Suisse"),
-            listOf("Petits pois 66%", "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"),
-            listOf(),
-            listOf()
-        )
-
-        this.updateValues(product)
-
-        /*findViewById<TextView>(R.id.my_text).setOnClickListener {
-            Log.d("VIEW", "Clicked on app title !")
-        }*/
-    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

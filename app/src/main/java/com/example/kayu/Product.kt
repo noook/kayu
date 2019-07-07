@@ -17,14 +17,14 @@ data class Product(
     val additives: List<String>,
     val nutriFacts: NutritionFacts,
     val bookmarked: Boolean
-): Parcelable
+) : Parcelable
 
 @Parcelize
 data class NutritionFactsItem(
     val unit: String,
     val quantity_per_portion: Float,
     val quantityFor100: Float
-): Parcelable
+) : Parcelable
 
 @Parcelize
 data class NutritionFacts(
@@ -37,7 +37,7 @@ data class NutritionFacts(
     var proteins: NutritionFactsItem,
     val salt: NutritionFactsItem,
     val sodium: NutritionFactsItem
-): Parcelable {
+) : Parcelable {
     val map = mapOf(
         "calories" to this.calories,
         "fat" to this.fat,
