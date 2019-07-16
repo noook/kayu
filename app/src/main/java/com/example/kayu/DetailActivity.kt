@@ -19,7 +19,7 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
-        val actionBar = findViewById(R.id.toolbar) as Toolbar?
+        val actionBar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(actionBar)
         supportActionBar?.setTitle(R.string.product_detail)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -35,17 +35,13 @@ class DetailActivity : AppCompatActivity() {
                 val product = withContext(Dispatchers.IO) {
                     api.getProduct(barcode).await().response?.toProduct()!!
                 }
-                viewPager.adapter = ProductDetailsAdapter(supportFragmentManager, product)
+                viewPager.adapter = ProductDetailsAdapter(supportFragmentManager, product, applicationContext)
                 tabs.setupWithViewPager(viewPager)
             } catch (e: Exception) {
                 println("An error occurred while doing the request.")
                 print(e.printStackTrace())
             }
         }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {

@@ -47,11 +47,12 @@ class ProductNutriTableFragment : Fragment() {
             floatFormatter.format(product.nutriFacts.fat.quantityFor100),
             product.nutriFacts.fat.unit
         ) else "?"
-        view.saturated_fat_for_100.text = if (product.nutriFacts.fat_acids.quantityFor100 != null) view.context.getString(
-            R.string.value_unit,
-            floatFormatter.format(product.nutriFacts.fat_acids.quantityFor100),
-            product.nutriFacts.fat_acids.unit
-        ) else "?"
+        view.saturated_fat_for_100.text =
+            if (product.nutriFacts.fat_acids.quantityFor100 != null) view.context.getString(
+                R.string.value_unit,
+                floatFormatter.format(product.nutriFacts.fat_acids.quantityFor100),
+                product.nutriFacts.fat_acids.unit
+            ) else "?"
         view.glucids_for_100.text = if (product.nutriFacts.glucids.quantityFor100 != null) view.context.getString(
             R.string.value_unit,
             floatFormatter.format(product.nutriFacts.glucids.quantityFor100),
@@ -83,50 +84,56 @@ class ProductNutriTableFragment : Fragment() {
             product.nutriFacts.sodium.unit
         ) else "?"
 
-        view.energy_per_serving.text = if (product.nutriFacts.calories.quantity_per_portion != null) view.context.getString(
-            R.string.value_unit,
-            floatFormatter.format(product.nutriFacts.calories.quantity_per_portion),
-            product.nutriFacts.calories.unit
-        ) else "?"
+        view.energy_per_serving.text =
+            if (product.nutriFacts.calories.quantity_per_portion != null) view.context.getString(
+                R.string.value_unit,
+                floatFormatter.format(product.nutriFacts.calories.quantity_per_portion),
+                product.nutriFacts.calories.unit
+            ) else "?"
         view.fat_per_serving.text = if (product.nutriFacts.fat.quantity_per_portion != null) view.context.getString(
             R.string.value_unit,
             floatFormatter.format(product.nutriFacts.fat.quantity_per_portion),
             product.nutriFacts.fat.unit
         ) else "?"
-        view.saturated_fat_per_serving.text = if (product.nutriFacts.fat_acids.quantity_per_portion != null) view.context.getString(
-            R.string.value_unit,
-            floatFormatter.format(product.nutriFacts.fat_acids.quantity_per_portion),
-            product.nutriFacts.fat_acids.unit
-        ) else "?"
-        view.glucids_per_serving.text = if (product.nutriFacts.glucids.quantity_per_portion != null) view.context.getString(
-            R.string.value_unit,
-            floatFormatter.format(product.nutriFacts.glucids.quantity_per_portion),
-            product.nutriFacts.glucids.unit
-        ) else "?"
+        view.saturated_fat_per_serving.text =
+            if (product.nutriFacts.fat_acids.quantity_per_portion != null) view.context.getString(
+                R.string.value_unit,
+                floatFormatter.format(product.nutriFacts.fat_acids.quantity_per_portion),
+                product.nutriFacts.fat_acids.unit
+            ) else "?"
+        view.glucids_per_serving.text =
+            if (product.nutriFacts.glucids.quantity_per_portion != null) view.context.getString(
+                R.string.value_unit,
+                floatFormatter.format(product.nutriFacts.glucids.quantity_per_portion),
+                product.nutriFacts.glucids.unit
+            ) else "?"
         view.sugar_per_serving.text = if (product.nutriFacts.sugar.quantity_per_portion != null) view.context.getString(
             R.string.value_unit,
             floatFormatter.format(product.nutriFacts.sugar.quantity_per_portion),
             product.nutriFacts.sugar.unit
         ) else "?"
-        view.fibers_per_serving.text = if (product.nutriFacts.fibers.quantity_per_portion != null) view.context.getString(
-            R.string.value_unit,
-            floatFormatter.format(product.nutriFacts.fibers.quantity_per_portion),
-            product.nutriFacts.fibers.unit
-        ) else "?"
-        view.proteins_per_serving.text = if (product.nutriFacts.proteins.quantity_per_portion != null) view.context.getString(
-            R.string.value_unit,
-            floatFormatter.format(product.nutriFacts.proteins.quantity_per_portion),
-            product.nutriFacts.proteins.unit
-        ) else "?"
+        view.fibers_per_serving.text =
+            if (product.nutriFacts.fibers.quantity_per_portion != null) view.context.getString(
+                R.string.value_unit,
+                floatFormatter.format(product.nutriFacts.fibers.quantity_per_portion),
+                product.nutriFacts.fibers.unit
+            ) else "?"
+        view.proteins_per_serving.text =
+            if (product.nutriFacts.proteins.quantity_per_portion != null) view.context.getString(
+                R.string.value_unit,
+                floatFormatter.format(product.nutriFacts.proteins.quantity_per_portion),
+                product.nutriFacts.proteins.unit
+            ) else "?"
         view.salt_per_serving.text = if (product.nutriFacts.salt.quantity_per_portion != null) view.context.getString(
             R.string.value_unit,
             floatFormatter.format(product.nutriFacts.salt.quantity_per_portion),
             product.nutriFacts.salt.unit
         ) else "?"
-        view.sodium_per_serving.text = if (product.nutriFacts.sodium.quantity_per_portion != null) view.context.getString(
-            R.string.value_unit,
-            floatFormatter.format(product.nutriFacts.sodium.quantity_per_portion),
-            product.nutriFacts.sodium.unit
-        ) else "?"
+        view.sodium_per_serving.text =
+            if (product.nutriFacts.sodium.quantity_per_portion != null) view.context.getString(
+                R.string.value_unit,
+                floatFormatter.format(product.nutriFacts.sodium.quantity_per_portion),
+                product.nutriFacts.sodium.unit
+            ) else "?"
     }
 }

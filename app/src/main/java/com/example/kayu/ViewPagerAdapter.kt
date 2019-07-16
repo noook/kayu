@@ -1,10 +1,12 @@
 package com.example.kayu
 
+import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 
-class ProductDetailsAdapter(fm: FragmentManager, val product: Product) : FragmentPagerAdapter(fm) {
+class ProductDetailsAdapter(fm: FragmentManager, val product: Product, private val context: Context) :
+    FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
@@ -17,12 +19,11 @@ class ProductDetailsAdapter(fm: FragmentManager, val product: Product) : Fragmen
 
     override fun getCount(): Int = 3
 
-    // TODO Utiliser des ressources
     override fun getPageTitle(position: Int): CharSequence? {
         return when (position) {
-            0 -> "Fiche"
-            1 -> "Nutrition"
-            2 -> "Infos nutritionnelles"
+            0 -> context.getString(R.string.card)
+            1 -> context.getString(R.string.nutrition)
+            2 -> context.getString(R.string.nutri_infos)
             else -> throw Exception("Unknown position")
         }
     }

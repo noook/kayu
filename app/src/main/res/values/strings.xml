@@ -40,4 +40,7 @@
     <string name="value_unit">%1$s%2$s</string>
     <string name="not_given">Non renseigné</string>
     <string name="product_detail">Détails du produit</string>
+    <string name="card">Fiche</string>
+    <string name="nutrition">Nutrition</string>
+    <string name="nutri_infos">Infos nutritionnelles</string>
 </resources>
