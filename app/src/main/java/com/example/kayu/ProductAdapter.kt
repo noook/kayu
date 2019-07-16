@@ -1,11 +1,13 @@
 package com.example.kayu
 
 import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
@@ -43,7 +45,7 @@ class ProductItemCell(v: View) : RecyclerView.ViewHolder(v) {
         nutriscore.text = nutriscore.context.getString(R.string.nutriscore_value, product.nutriscore)
         calories.text = calories.context.getString(
             R.string.calories_per_portion,
-            product.nutriFacts.calories.quantity_per_portion.roundToLong()
+            product.nutriFacts.calories.quantity_per_portion!!.roundToLong()
         )
         Picasso.get().load(product.picUrl).into(picture)
         if (product.bookmarked) {
@@ -56,9 +58,7 @@ class ProductItemCell(v: View) : RecyclerView.ViewHolder(v) {
         itemView.setOnClickListener {
             val context = itemView.context
             val intent = Intent(context, DetailActivity::class.java)
-            println(product.barcode) // Not null
-            intent.putExtra("product", product.barcode)
-
+            intent.putExtra("barcode", product.barcode)
             context.startActivity(intent)
         }
     }

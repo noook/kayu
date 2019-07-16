@@ -15,8 +15,6 @@
     <string name="calories_per_portion">%1$d kCal/part</string>
     <string name="nutrition_100_benchmarks">Repères nutritionnels pour 100g</string>
     <string name="menu_barcode">Mes produits</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="no_additives">Aucun</string>
     <string name="no_allergenes">Aucune</string>
@@ -28,4 +26,18 @@
     <string name="low_quantity">En faible quantité</string>
     <string name="medium_quantity">En quantité modérée</string>
     <string name="high_quantity">En quantité élevée</string>
+    <string name="par_part">Par part</string>
+    <string name="label_energy">Énergie</string>
+    <string name="label_fat">Matières grasses</string>
+    <string name="label_saturated_fat">Dont acides gras saturés</string>
+    <string name="label_glucids">Glucides</string>
+    <string name="label_sugar">Dont sucres</string>
+    <string name="label_fibers">Fibres</string>
+    <string name="label_proteins">Protéines</string>
+    <string name="label_salt">Sel</string>
+    <string name="label_sodium">Sodium</string>
+    <string name="for_100g">Pour 100g</string>
+    <string name="value_unit">%1$s%2$s</string>
+    <string name="not_given">Non renseigné</string>
+    <string name="product_detail">Détails du produit</string>
 </resources>

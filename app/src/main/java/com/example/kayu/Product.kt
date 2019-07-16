@@ -22,8 +22,8 @@ data class Product(
 @Parcelize
 data class NutritionFactsItem(
     val unit: String,
-    val quantity_per_portion: Float,
-    val quantityFor100: Float
+    val quantity_per_portion: Float?,
+    val quantityFor100: Float?
 ) : Parcelable
 
 @Parcelize

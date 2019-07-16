@@ -130,50 +130,50 @@ data class ServerResponse(
 
         fun toNutritionFacts(): com.example.kayu.NutritionFacts {
             val calories = NutritionFactsItem(
-                this.calories?.unit ?: "",
-                this.calories?.perServing?.toFloatOrNull() ?: 0f,
-                this.calories?.per100g?.toFloatOrNull() ?: 0f
+                this.calories?.unit ?: "kcal",
+                this.calories?.perServing?.toFloatOrNull(),
+                this.calories?.per100g?.toFloatOrNull()
             )
 
             val fat: NutritionFactsItem = NutritionFactsItem(
-                this.fat?.unit ?: "",
-                this.fat?.perServing?.toFloatOrNull() ?: 0f,
-                this.fat?.per100g?.toFloatOrNull() ?: 0f
+                this.fat?.unit ?: "g",
+                this.fat?.perServing?.toFloatOrNull(),
+                this.fat?.per100g?.toFloatOrNull()
             )
             val fat_acids: NutritionFactsItem = NutritionFactsItem(
-                this.saturatedFat?.unit ?: "",
-                this.saturatedFat?.perServing?.toFloatOrNull() ?: 0f,
-                this.saturatedFat?.per100g?.toFloatOrNull() ?: 0f
+                this.saturatedFat?.unit ?: "g",
+                this.saturatedFat?.perServing?.toFloatOrNull(),
+                this.saturatedFat?.per100g?.toFloatOrNull()
             )
             val glucids: NutritionFactsItem = NutritionFactsItem(
-                this.energy?.unit ?: "",
-                this.energy?.perServing?.toFloatOrNull() ?: 0f,
-                this.energy?.per100g?.toFloatOrNull() ?: 0f
+                this.energy?.unit ?: "g",
+                this.energy?.perServing?.toFloatOrNull(),
+                this.energy?.per100g?.toFloatOrNull()
             )
             val sugar: NutritionFactsItem = NutritionFactsItem(
-                this.sugar?.unit ?: "",
-                this.sugar?.perServing?.toFloatOrNull() ?: 0f,
-                this.sugar?.per100g?.toFloatOrNull() ?: 0f
+                this.sugar?.unit ?: "g",
+                this.sugar?.perServing?.toFloatOrNull(),
+                this.sugar?.per100g?.toFloatOrNull()
             )
             val fibers: NutritionFactsItem = NutritionFactsItem(
-                this.fiber?.unit ?: "",
-                this.fiber?.perServing?.toFloatOrNull() ?: 0f,
-                this.fiber?.per100g?.toFloatOrNull() ?: 0f
+                this.fiber?.unit ?: "g",
+                this.fiber?.perServing?.toFloatOrNull(),
+                this.fiber?.per100g?.toFloatOrNull()
             )
             var proteins: NutritionFactsItem = NutritionFactsItem(
-                this.proteins?.unit ?: "",
-                this.proteins?.perServing?.toFloatOrNull() ?: 0f,
-                this.proteins?.per100g?.toFloatOrNull() ?: 0f
+                this.proteins?.unit ?: "g",
+                this.proteins?.perServing?.toFloatOrNull(),
+                this.proteins?.per100g?.toFloatOrNull()
             )
             val salt: NutritionFactsItem = NutritionFactsItem(
-                this.salt?.unit ?: "",
-                this.salt?.perServing?.toFloatOrNull() ?: 0f,
-                this.salt?.per100g?.toFloatOrNull() ?: 0f
+                this.salt?.unit ?: "g",
+                this.salt?.perServing?.toFloatOrNull(),
+                this.salt?.per100g?.toFloatOrNull()
             )
             val sodium: NutritionFactsItem = NutritionFactsItem(
-                this.sodium?.unit ?: "",
-                this.sodium?.perServing?.toFloatOrNull() ?: 0f,
-                this.sodium?.per100g?.toFloatOrNull() ?: 0f
+                this.sodium?.unit ?: "g",
+                this.sodium?.perServing?.toFloatOrNull(),
+                this.sodium?.per100g?.toFloatOrNull()
             )
 
             return com.example.kayu.NutritionFacts(

@@ -10,7 +10,7 @@ class ProductDetailsAdapter(fm: FragmentManager, val product: Product) : Fragmen
         return when (position) {
             0 -> ProductDetailFragment.newInstance(product)
             1 -> ProductNutriFragment.newInstance(product)
-            2 -> ProductDetailFragment.newInstance(product)
+            2 -> ProductNutriTableFragment.newInstance(product)
             else -> throw Exception("Unknown position")
         }
     }

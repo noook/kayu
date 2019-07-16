@@ -1,26 +1,31 @@
 package com.example.kayu
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.activity_detail.*
-import kotlinx.coroutines.*
-import java.lang.Exception
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 
 class DetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setSupportActionBar(toolbar)
         setContentView(R.layout.activity_detail)
+        val actionBar = findViewById(R.id.toolbar) as Toolbar?
+        setSupportActionBar(actionBar)
+        supportActionBar?.setTitle(R.string.product_detail)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.title_gradiant))
 
         var barcode = intent.getStringExtra("barcode")
-        println("HERE $barcode") // null ???
-        barcode = "3083680085304" // Using this one for the moment
         val api: API = API.create()
         val tabs = findViewById<TabLayout>(R.id.tabs)
         val viewPager = findViewById<ViewPager>(R.id.viewpager)
@@ -37,6 +42,10 @@ class DetailActivity : AppCompatActivity() {
                 print(e.printStackTrace())
             }
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {

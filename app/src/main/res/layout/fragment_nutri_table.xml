@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nutri_table_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="label_energy,label_fat,label_saturated_fat,label_glucids,label_sugar,label_fibers,label_proteins,label_salt,label_sodium"
+        tools:layout_editor_absoluteX="217dp" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/label_for_100g"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:text="@string/for_100g"
+        app:border="left|right"
+        android:textSize="@dimen/nutri_table_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/label_per_serving"
+        app:layout_constraintEnd_toStartOf="@id/label_per_serving"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintTop_toTopOf="@id/label_per_serving" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/label_per_serving"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:text="@string/par_part"
+        android:textSize="@dimen/nutri_table_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/nutri_table_layout"
+        app:layout_constraintStart_toEndOf="@id/label_for_100g"
+        app:layout_constraintTop_toTopOf="@id/nutri_table_layout" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/label_energy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/label_energy"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintStart_toStartOf="@id/nutri_table_layout"
+        app:layout_constraintTop_toBottomOf="@id/label_for_100g" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/label_fat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/label_fat"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintStart_toStartOf="@id/nutri_table_layout"
+        app:layout_constraintTop_toBottomOf="@id/label_energy" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/label_saturated_fat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/label_saturated_fat"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintStart_toStartOf="@id/nutri_table_layout"
+        app:layout_constraintTop_toBottomOf="@id/label_fat" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/label_glucids"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/label_glucids"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintStart_toStartOf="@id/nutri_table_layout"
+        app:layout_constraintTop_toBottomOf="@id/label_saturated_fat" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/label_sugar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/label_sugar"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintStart_toStartOf="@id/nutri_table_layout"
+        app:layout_constraintTop_toBottomOf="@id/label_glucids" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/label_fibers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/label_fibers"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintStart_toStartOf="@id/nutri_table_layout"
+        app:layout_constraintTop_toBottomOf="@id/label_sugar" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/label_proteins"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/label_proteins"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintStart_toStartOf="@id/nutri_table_layout"
+        app:layout_constraintTop_toBottomOf="@id/label_fibers" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/label_salt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/label_salt"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintStart_toStartOf="@id/nutri_table_layout"
+        app:layout_constraintTop_toBottomOf="@id/label_proteins" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/label_sodium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/label_sodium"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top|bottom"
+        app:layout_constraintEnd_toStartOf="@id/barrier"
+        app:layout_constraintStart_toStartOf="@id/nutri_table_layout"
+        app:layout_constraintTop_toBottomOf="@id/label_salt" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/energy_for_100"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top|left|right"
+        app:layout_constraintBottom_toBottomOf="@id/label_energy"
+        app:layout_constraintEnd_toEndOf="@id/label_for_100g"
+        app:layout_constraintStart_toEndOf="@id/label_energy"
+        app:layout_constraintTop_toTopOf="@id/label_energy"
+        tools:text="293Kj" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/fat_for_100"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top|left|right"
+        app:layout_constraintBottom_toBottomOf="@id/label_fat"
+        app:layout_constraintEnd_toEndOf="@id/label_for_100g"
+        app:layout_constraintStart_toEndOf="@id/label_fat"
+        app:layout_constraintTop_toTopOf="@id/label_fat"
+        tools:text="0.8g" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/saturated_fat_for_100"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top|left|right"
+        app:layout_constraintBottom_toBottomOf="@id/label_saturated_fat"
+        app:layout_constraintEnd_toEndOf="@id/label_for_100g"
+        app:layout_constraintStart_toEndOf="@id/label_saturated_fat"
+        app:layout_constraintTop_toTopOf="@id/label_saturated_fat"
+        tools:text="0.1g" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/glucids_for_100"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top|left|right"
+        app:layout_constraintBottom_toBottomOf="@id/label_glucids"
+        app:layout_constraintEnd_toEndOf="@id/label_for_100g"
+        app:layout_constraintStart_toEndOf="@id/label_glucids"
+        app:layout_constraintTop_toTopOf="@id/label_glucids"
+        tools:text="8.4g" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/sugar_for_100"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top|left|right"
+        app:layout_constraintBottom_toBottomOf="@id/label_sugar"
+        app:layout_constraintEnd_toEndOf="@id/label_for_100g"
+        app:layout_constraintStart_toEndOf="@id/label_sugar"
+        app:layout_constraintTop_toTopOf="@id/label_sugar"
+        tools:text="5.2g" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/fibers_for_100"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top|left|right"
+        app:layout_constraintBottom_toBottomOf="@id/label_fibers"
+        app:layout_constraintEnd_toEndOf="@id/label_for_100g"
+        app:layout_constraintStart_toEndOf="@id/label_fibers"
+        app:layout_constraintTop_toTopOf="@id/label_fibers"
+        tools:text="5.2g" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/proteins_for_100"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top|left|right"
+        app:layout_constraintBottom_toBottomOf="@id/label_proteins"
+        app:layout_constraintEnd_toEndOf="@id/label_for_100g"
+        app:layout_constraintStart_toEndOf="@id/label_proteins"
+        app:layout_constraintTop_toTopOf="@id/label_proteins"
+        tools:text="4.2g" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/salt_for_100"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top|left|right"
+        app:layout_constraintBottom_toBottomOf="@id/label_salt"
+        app:layout_constraintEnd_toEndOf="@id/label_for_100g"
+        app:layout_constraintStart_toEndOf="@id/label_salt"
+        app:layout_constraintTop_toTopOf="@id/label_salt"
+        tools:text="0.75g" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/sodium_for_100"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top|bottom|left|right"
+        app:layout_constraintBottom_toBottomOf="@id/label_sodium"
+        app:layout_constraintEnd_toEndOf="@id/label_for_100g"
+        app:layout_constraintStart_toEndOf="@id/label_sodium"
+        app:layout_constraintTop_toTopOf="@id/label_sodium"
+        tools:text="0.295g" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/energy_per_serving"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintBottom_toBottomOf="@id/label_energy"
+        app:layout_constraintEnd_toEndOf="@id/label_per_serving"
+        app:layout_constraintStart_toEndOf="@id/energy_for_100"
+        app:layout_constraintTop_toTopOf="@id/label_energy"
+        tools:text="?" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/fat_per_serving"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintBottom_toBottomOf="@id/label_fat"
+        app:layout_constraintEnd_toEndOf="@id/label_per_serving"
+        app:layout_constraintStart_toEndOf="@id/fat_for_100"
+        app:layout_constraintTop_toTopOf="@id/label_fat"
+        tools:text="?" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/saturated_fat_per_serving"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintBottom_toBottomOf="@id/label_saturated_fat"
+        app:layout_constraintEnd_toEndOf="@id/label_per_serving"
+        app:layout_constraintStart_toEndOf="@id/saturated_fat_for_100"
+        app:layout_constraintTop_toTopOf="@id/label_saturated_fat"
+        tools:text="?" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/glucids_per_serving"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintBottom_toBottomOf="@id/label_glucids"
+        app:layout_constraintEnd_toEndOf="@id/label_per_serving"
+        app:layout_constraintStart_toEndOf="@id/glucids_for_100"
+        app:layout_constraintTop_toTopOf="@id/label_glucids"
+        tools:text="?" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/sugar_per_serving"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintBottom_toBottomOf="@id/label_sugar"
+        app:layout_constraintEnd_toEndOf="@id/label_per_serving"
+        app:layout_constraintStart_toEndOf="@id/sugar_for_100"
+        app:layout_constraintTop_toTopOf="@id/label_sugar"
+        tools:text="?" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/fibers_per_serving"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintBottom_toBottomOf="@id/label_fibers"
+        app:layout_constraintEnd_toEndOf="@id/label_per_serving"
+        app:layout_constraintStart_toEndOf="@id/fibers_for_100"
+        app:layout_constraintTop_toTopOf="@id/label_fibers"
+        tools:text="?" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/proteins_per_serving"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintBottom_toBottomOf="@id/label_proteins"
+        app:layout_constraintEnd_toEndOf="@id/label_per_serving"
+        app:layout_constraintStart_toEndOf="@id/proteins_for_100"
+        app:layout_constraintTop_toTopOf="@id/label_proteins"
+        tools:text="?" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/salt_per_serving"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top"
+        app:layout_constraintBottom_toBottomOf="@id/label_salt"
+        app:layout_constraintEnd_toEndOf="@id/label_per_serving"
+        app:layout_constraintStart_toEndOf="@id/salt_for_100"
+        app:layout_constraintTop_toTopOf="@id/label_salt"
+        tools:text="?" />
+
+    <com.example.kayu.TableCellView
+        android:id="@+id/sodium_per_serving"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/nutri_table_size"
+        app:border="top|bottom"
+        app:layout_constraintBottom_toBottomOf="@id/label_sodium"
+        app:layout_constraintEnd_toEndOf="@id/label_per_serving"
+        app:layout_constraintStart_toEndOf="@id/sodium_for_100"
+        app:layout_constraintTop_toTopOf="@id/label_sodium"
+        tools:text="?" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

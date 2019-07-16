@@ -11,15 +11,6 @@ import kotlinx.android.synthetic.main.fragment_product_detail.view.*
 
 private const val ARG_PRODUCT = "product"
 
-/**
- * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
- * [ProductDetailFragment.OnFragmentInteractionListener] interface
- * to handle interaction events.
- * Use the [ProductDetailFragment.newInstance] factory method to
- * create an instance of this fragment.
- *
- */
 class ProductDetailFragment : Fragment() {
 
     companion object {

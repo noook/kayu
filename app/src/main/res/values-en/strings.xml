@@ -26,4 +26,18 @@
     <string name="high_quantity">In high quantity</string>
     <string name="low_quantity">In low quantity</string>
     <string name="medium_quantity">In moderate quantity</string>
+    <string name="par_part">Per serving</string>
+    <string name="label_fat">Fat</string>
+    <string name="label_saturated_fat">Saturated fat acids</string>
+    <string name="label_glucids">Glucids</string>
+    <string name="label_fibers">Fibers</string>
+    <string name="label_proteins">Proteine</string>
+    <string name="label_salt">Sel</string>
+    <string name="label_sodium">Sodium</string>
+    <string name="for_100g">Pour 100g</string>
+    <string name="label_sugar">Including sugar</string>
+    <string name="label_energy">Energy</string>
+    <string name="value_unit">%1$s%2$s</string>
+    <string name="not_given">Non available</string>
+    <string name="product_detail">Product details</string>
 </resources>

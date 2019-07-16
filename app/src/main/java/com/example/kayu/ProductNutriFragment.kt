@@ -41,7 +41,7 @@ class ProductNutriFragment : Fragment() {
     }
 }
 
-val floatFormatter: String = "%.1f"
+private const val floatFormatter: String = "%.1f"
 
 fun applyNutriFacts(view: View, product: Product) {
     view.fat.text = view.context.getString(
@@ -137,7 +137,10 @@ fun getBackgroundColor(rate: String): Int {
     }
 }
 
-fun getIndicator(context: Context, nutriment: String, quantity: Float): Pair<String, String> {
+fun getIndicator(context: Context, nutriment: String, quantity: Float?): Pair<String, String> {
+    if (quantity == null) {
+        return Pair("moderate", context.getString(R.string.not_given))
+    }
     return when {
         quantity.compareTo(intervals.get(nutriment)!!.get("low")!!) < 0 -> Pair(
             "low",

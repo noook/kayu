@@ -17,6 +17,8 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.empty_list.*
 import kotlinx.android.synthetic.main.list.*
 
+private val SCAN_REQUEST_CODE = 1
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -26,10 +28,25 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item?.itemId == R.id.barcode) {
+            val intent = Intent("com.google.zxing.client.android.SCAN")
+            intent.putExtra("SCAN_FORMATS", "EAN_13")
+            startActivityForResult(intent, SCAN_REQUEST_CODE)
             return true
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == SCAN_REQUEST_CODE) {
+            val format = data?.getStringExtra("SCAN_RESULT_FORMAT")
+            val barcode = data?.getStringExtra("SCAN_RESULT")
+
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra("barcode", barcode)
+            this.startActivity(intent)
+        }
+        //super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
