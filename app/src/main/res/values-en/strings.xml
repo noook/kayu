@@ -43,4 +43,6 @@
     <string name="card">Card</string>
     <string name="nutrition">Nutrition</string>
     <string name="nutri_infos">Nutritional information</string>
+    <string name="loading">Loading...</string>
+    <string name="error_occurred">An error occurred while making the request. Retry ?</string>
 </resources>

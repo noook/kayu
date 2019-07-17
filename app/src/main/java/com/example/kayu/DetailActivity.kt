@@ -1,7 +1,11 @@
 package com.example.kayu
 
+import android.app.AlertDialog
+import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Contacts
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -12,9 +16,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.jetbrains.anko.*
+import kotlin.coroutines.suspendCoroutine
 
 
 class DetailActivity : AppCompatActivity() {
+
+    var api: API = API.create()
+
+    lateinit var dialog: ProgressDialog
+    lateinit var viewPager: ViewPager
+    lateinit var tabs: TabLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,21 +38,36 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.title_gradiant))
 
         var barcode = intent.getStringExtra("barcode")
-        val api: API = API.create()
-        val tabs = findViewById<TabLayout>(R.id.tabs)
-        val viewPager = findViewById<ViewPager>(R.id.viewpager)
+        this.tabs = findViewById<TabLayout>(R.id.tabs)
+        this.viewPager = findViewById<ViewPager>(R.id.viewpager)
+        this.dialog = indeterminateProgressDialog(message = applicationContext.getString(R.string.loading))
 
+        makeRequest(barcode)
+    }
+
+    fun makeRequest(barcode: String) {
+
+        dialog.show()
         GlobalScope.launch(Dispatchers.Main) {
             try {
                 val product = withContext(Dispatchers.IO) {
                     api.getProduct(barcode).await().response?.toProduct()!!
                 }
+                dialog.dismiss()
                 viewPager.adapter = ProductDetailsAdapter(supportFragmentManager, product, applicationContext)
                 tabs.setupWithViewPager(viewPager)
             } catch (e: Exception) {
-                println("An error occurred while doing the request.")
+                dialog.dismiss()
+                requestError(barcode).show()
                 print(e.printStackTrace())
             }
+        }
+    }
+
+    fun requestError(barcode: String): AlertBuilder<AlertDialog> {
+        return alert(applicationContext.getString(R.string.error_occurred)) {
+            yesButton { makeRequest(barcode) }
+            noButton { finish() }
         }
     }
 
