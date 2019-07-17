@@ -20,4 +20,6 @@
     <dimen name="empty_plate_width">120dp</dimen>
     <dimen name="empty_plate_height">120dp</dimen>
     <dimen name="nutri_table_size">18sp</dimen>
+    <dimen name="nutri_table_table_cell_padding">15dp</dimen>
+    <dimen name="nutri_table_padding_y">10dp</dimen>
 </resources>
