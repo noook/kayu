@@ -2,10 +2,7 @@ package com.example.kayu
 
 import android.app.AlertDialog
 import android.app.ProgressDialog
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.provider.Contacts
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -17,7 +14,6 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.jetbrains.anko.*
-import kotlin.coroutines.suspendCoroutine
 
 
 class DetailActivity : AppCompatActivity() {
